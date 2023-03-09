@@ -26,7 +26,7 @@ public static class ServiceExtensions
         services.AddSingleton<IMongoDatabase>(options =>
         {
             var settings = config.GetSection("MongoDBSettings").Get<MongoDBSettings>();
-            var client = new MongoClient(settings.CoonectionString);
+            var client = new MongoClient(settings.ConnectionString);
             return client.GetDatabase(settings.DatabaseName);
         });
     }
