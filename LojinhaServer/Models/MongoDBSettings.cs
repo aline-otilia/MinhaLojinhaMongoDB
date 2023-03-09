@@ -7,7 +7,7 @@ namespace LojinhaServer.Models
 {
     public class MongoDBSettings
     {
-        public string CoonectionString { get; set; }
+        public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
     }
 }

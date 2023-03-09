@@ -1,4 +1,5 @@
 using LojinhaServer.Models;
+using LojinhaServer.Repositories;
 using MongoDB.Driver;
 
 namespace LojinhaServer.Extensions;
@@ -28,5 +29,10 @@ public static class ServiceExtensions
             var client = new MongoClient(settings.CoonectionString);
             return client.GetDatabase(settings.DatabaseName);
         });
+    }
+
+    public static void ConfigureProductRepository(this IServiceCollection services)
+    {
+        services.AddSingleton<IProductRepository, ProductRepository>();
     }
 }
